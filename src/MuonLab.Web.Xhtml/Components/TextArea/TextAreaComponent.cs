@@ -1,7 +1,8 @@
 using System.Globalization;
+using MuonLab.Web.Xhtml.Components.Implementations;
 using MuonLab.Web.Xhtml.Configuration;
 
-namespace MuonLab.Web.Xhtml.Components.Implementations
+namespace MuonLab.Web.Xhtml.Components
 {
     public class TextAreaComponent<TViewModel, TProperty> : 
 		FormattableComponent<TViewModel, TProperty>, 
@@ -14,24 +15,8 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 	    {
 	    }
 
-	    public override string ControlPrefix
-        {
-            get { return "txt"; }
-        }
-
-        public ITextAreaComponent WithRows(int rows)
-        {
-            WithAttr("rows", rows);
-            return this;
-        }
-
-        public ITextAreaComponent WithCols(int cols)
-        {
-            WithAttr("cols", cols);
-            return this;
-        }
-
-
+	    public override string ControlPrefix => "txt";
+		
 		public ITextAreaComponent WithPlaceholder()
 		{
 			this.useLabelForPlaceholder = true;
@@ -44,8 +29,7 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 			this.placeholder = text;
 			return this;
 		}
-
-
+		
         protected override string RenderComponent()
         {
 			if (this.useLabelForPlaceholder)

@@ -6,21 +6,7 @@ namespace MuonLab.Web.Xhtml.Components
 #endif
 	{
         string Name { get; }
-
-        /// <summary>
-        /// Sets the Id attribute of the component
-        /// </summary>
-        /// <param name="id">The id to set</param>
-        /// <returns></returns>
-        IComponent WithId(string id);
-
-        /// <summary>
-        /// Sets the Name attribute of the compontent
-        /// </summary>
-        /// <param name="name">The name to set</param>
-        /// <returns></returns>
-        IComponent WithName(string name);
-
+		
         /// <summary>
         /// Sets an attribute-value on the component
         /// </summary>
@@ -35,27 +21,7 @@ namespace MuonLab.Web.Xhtml.Components
         /// <param name="name"></param>
         /// <returns></returns>
         IComponent WithoutAttr(string name);
-
-        /// <summary>
-        /// Fluent CssClass setter
-        /// </summary>
-        /// <param name="className"></param>
-        /// <returns></returns>
-        IComponent AddClass(string className);
-
-        /// <summary>
-        /// Fluent CssClass setter
-        /// </summary>
-        /// <param name="className"></param>
-        /// <returns></returns>
-        IComponent WithClass(string className);
-
-        /// <summary>
-        /// Set the field as disabled
-        /// </summary>
-        /// <returns></returns>
-        IComponent Disabled();
-
+		
         /// <summary>
         /// Sets the value for the component. Although this is weakly typed, you should set it with the correct type
         /// </summary>

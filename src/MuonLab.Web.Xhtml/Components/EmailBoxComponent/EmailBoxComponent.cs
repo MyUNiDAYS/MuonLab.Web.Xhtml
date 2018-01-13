@@ -12,10 +12,7 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 	    {
 	    }
 
-	    public override string ControlPrefix
-        {
-            get { return "txt"; }
-        }
+	    public override string ControlPrefix => "txt";
 
 	    protected override string RenderComponent()
         {

@@ -18,5 +18,72 @@
 
 			return component;
 		}
+
+		/// <summary>
+		/// Sets the components HTML id
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
+		public static TComponent WithId<TComponent>(this TComponent component, string id)
+			where TComponent : IComponent
+		{
+			component.WithAttr("id", id);
+
+			return component;
+		}
+
+		/// <summary>
+		/// Sets the components HTML name
+		/// </summary>
+		/// <param name="name"></param>
+		/// <returns></returns>
+		public static TComponent WithName<TComponent>(this TComponent component, string name)
+			where TComponent : IComponent
+		{
+			component.WithAttr("name", name);
+
+			return component;
+		}
+
+
+		/// <summary>
+		/// Set the field as disabled
+		/// </summary>
+		/// <returns></returns>
+		public static TComponent Disabled<TComponent>(this TComponent component)
+			where TComponent : IComponent
+		{
+			component.WithAttr("disabled", "disabled");
+			return component;
+		}
+
+		/// <summary>
+		/// Fluent CssClass setter
+		/// </summary>
+		/// <param name="className"></param>
+		/// <returns></returns>
+		public static TComponent WithClass<TComponent>(this TComponent component, string className)
+			where TComponent : IComponent
+		{
+			component.WithAttr("class", className);
+			return component;
+		}
+
+		/// <summary>
+		/// Fluent CssClass setter
+		/// </summary>
+		/// <param name="className"></param>
+		/// <returns></returns>
+		public static TComponent AddClass<TComponent>(this TComponent component, string className) 
+			where TComponent : IComponent
+		{
+			var componentInternal = component as IComponentInternal;
+			if (!string.IsNullOrEmpty(componentInternal.GetAttr("class")))
+				component.WithAttr("class", componentInternal.GetAttr("class") + ' ' + className);
+			else
+				component.WithAttr("class", className);
+
+			return component;
+		}
 	}
 }

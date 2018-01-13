@@ -1,4 +1,5 @@
 using System.Globalization;
+using MuonLab.Web.Xhtml.Components;
 using MuonLab.Web.Xhtml.Configuration;
 
 namespace MuonLab.Web.Xhtml.Components.Implementations

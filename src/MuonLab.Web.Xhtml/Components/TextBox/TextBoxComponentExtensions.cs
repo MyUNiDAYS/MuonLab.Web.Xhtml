@@ -11,7 +11,20 @@ namespace MuonLab.Web.Xhtml.Components
 		/// <returns></returns>
 		public static TComponent WithMaxLength<TComponent>(this TComponent component, int maxLength) where TComponent : ITextBoxComponent
 		{
-			(component as ITextBoxComponentInternal).WithMaxLength(maxLength);
+			component.WithAttr("maxlength", maxLength.ToString());
+			return component;
+		}
+
+
+		public static TComponent PreventAutoComplete<TComponent>(this TComponent component) where TComponent : ITextBoxComponent
+		{
+			component.WithAttr("autocomplete", "off");
+			return component;
+		}
+
+		public static TComponent AllowAutoComplete<TComponent>(this TComponent component) where TComponent : ITextBoxComponent
+		{
+			component.WithoutAttr("autocomplete");
 			return component;
 		}
 	}

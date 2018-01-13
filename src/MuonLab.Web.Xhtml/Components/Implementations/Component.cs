@@ -5,7 +5,9 @@ using System.Diagnostics;
 namespace MuonLab.Web.Xhtml.Components.Implementations
 {
 	[DebuggerDisplay("Name: {Name}")]
-    public abstract class Component<TViewModel, TProperty> : IComponent<TProperty> 
+    public abstract class Component<TViewModel, TProperty> : 
+		IComponent<TProperty>,
+		IComponentInternal
     {
         protected readonly IDictionary<string, object> htmlAttributes;
         public abstract string ControlPrefix { get; }

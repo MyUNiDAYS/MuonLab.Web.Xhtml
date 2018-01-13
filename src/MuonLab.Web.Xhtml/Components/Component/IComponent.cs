@@ -28,16 +28,7 @@ namespace MuonLab.Web.Xhtml.Components
         /// <param name="value"></param>
         /// <returns></returns>
         IComponent WithAttr(string name, object value);
-
-        /// <summary>
-        /// Sets an attribute-value on the component if a condition is met
-        /// </summary>
-        /// <param name="condition"></param>
-        /// <param name="name"></param>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        IComponent WithAttrIf(bool condition, string name, object value);
-
+		
         /// <summary>
         /// Removes an attribute if set
         /// </summary>

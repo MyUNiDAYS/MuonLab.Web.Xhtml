@@ -1,5 +1,5 @@
 using System;
-using MuonLab.Web.Xhtml.Components.Implementations;
+using MuonLab.Web.Xhtml.Components;
 using MuonLab.Web.Xhtml.Tests.Components.FormattableComponentSpecifications;
 
 namespace MuonLab.Web.Xhtml.Tests.Components.TextBoxSpecifications

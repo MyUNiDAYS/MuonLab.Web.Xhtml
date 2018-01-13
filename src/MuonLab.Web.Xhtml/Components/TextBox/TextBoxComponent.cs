@@ -1,7 +1,9 @@
 using System.Globalization;
+using MuonLab.Web.Xhtml.Components.Implementations;
 using MuonLab.Web.Xhtml.Configuration;
 
-namespace MuonLab.Web.Xhtml.Components.Implementations
+// ReSharper disable once CheckNamespace
+namespace MuonLab.Web.Xhtml.Components
 {
     public class TextBoxComponent<TViewModel, TProperty> : 
 		FormattableComponent<TViewModel, TProperty>, 
@@ -47,23 +49,6 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 			this.explicitPlaceholder = true;
 			this.placeholder = text;
 			return this;
-	    }
-
-	    public virtual ITextBoxComponent PreventAutoComplete()
-        {
-            WithAttr("autocomplete", "off");
-            return this;
-        }
-
-        public ITextBoxComponent AllowAutoComplete()
-        {
-            WithoutAttr("autocomplete");
-            return this;
-        }
-
-	    void ITextBoxComponentInternal.WithMaxLength(int length)
-	    {
-		    this.WithAttr("maxlength", length.ToString());
 	    }
 
 		protected override string RenderComponent()

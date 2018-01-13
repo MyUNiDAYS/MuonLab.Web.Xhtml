@@ -1,4 +1,4 @@
-using MuonLab.Web.Xhtml.Components.Implementations;
+using MuonLab.Web.Xhtml.Components;
 using MuonLab.Web.Xhtml.Tests.Components.ComponentSpecifications;
 
 namespace MuonLab.Web.Xhtml.Tests.Components.TextBoxSpecifications

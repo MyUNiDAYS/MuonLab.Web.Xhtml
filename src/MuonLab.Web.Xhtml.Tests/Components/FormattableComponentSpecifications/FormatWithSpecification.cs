@@ -1,5 +1,4 @@
 using System;
-
 using MuonLab.Testing;
 using MuonLab.Web.Xhtml.Components;
 
@@ -16,7 +15,7 @@ namespace MuonLab.Web.Xhtml.Tests.Components.FormattableComponentSpecifications
         protected abstract Func<TProperty, string> formatFunc { get; }
 
         [Then]
-        public void the_value_should_be_formatted_correctly()
+        public void ItShouldBeFormattedCorrectly()
         {
             component.ToString().ShouldEqual(expectedRendering);
         }

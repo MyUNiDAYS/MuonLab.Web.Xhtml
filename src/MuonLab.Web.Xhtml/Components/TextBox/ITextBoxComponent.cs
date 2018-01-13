@@ -1,3 +1,4 @@
+// ReSharper disable once CheckNamespace
 namespace MuonLab.Web.Xhtml.Components
 {
     public interface ITextBoxComponent : IFormattableComponent
@@ -8,11 +9,5 @@ namespace MuonLab.Web.Xhtml.Components
 	    ITextBoxComponent WithExplicitPlaceholder(string placeholder);
         ITextBoxComponent PreventAutoComplete();
         ITextBoxComponent AllowAutoComplete();
-        ITextBoxComponent WithMaxLength(int length);
-    }
-
-    public interface ITextBoxComponent<TProperty> : IFormattableComponent<TProperty>, ITextBoxComponent
-    {
-		
     }
 }

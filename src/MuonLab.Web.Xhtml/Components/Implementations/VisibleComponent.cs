@@ -10,8 +10,9 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 {
     public abstract class VisibleComponent<TViewModel, TProperty> : 
 		Component<TViewModel, TProperty>, 
-		IVisibleComponent<TProperty>
-    {
+		IVisibleComponent<TProperty>,
+	    IVisibleComponentInternal
+	{
 	    protected readonly ITermResolver termResolver;
 	    protected readonly CultureInfo culture;
 	    internal event EventHandler OnPrepareForRender;
@@ -163,18 +164,7 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
             this.wrapperHtmlAttributes = htmlAttributes.ToDictionary();
             return this;
         }
-
-        /// <summary>
-        /// Sets the rendering order for this parts of the component
-        /// </summary>
-        /// <param name="renderingOrder"></param>
-        /// <returns></returns>
-        public IVisibleComponent WithRenderingOrder(params ComponentPart[] renderingOrder)
-        {
-            this.renderingOrder = renderingOrder;
-            return this;
-        }
-
+		
 	    protected virtual void AddAriaDescribedBy()
 	    {
 		    if (!this.htmlAttributes.ContainsKey("id"))
@@ -296,6 +286,11 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
                 }
             }
             return builder.ToString();
-        }		
-    }
+        }
+
+		void IVisibleComponentInternal.WithRenderingOrder(params ComponentPart[] renderingOrder)
+		{
+			this.renderingOrder = renderingOrder;
+		}
+	}
 }

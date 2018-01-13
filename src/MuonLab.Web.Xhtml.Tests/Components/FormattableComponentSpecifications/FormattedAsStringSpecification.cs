@@ -14,7 +14,7 @@ namespace MuonLab.Web.Xhtml.Tests.Components.FormattableComponentSpecifications
         protected abstract string formatString { get; }
 
         [Then]
-        public void the_value_should_be_formatted_correctly()
+        public void TheValueShouldBeFormattedCorrectly()
         {
             component.ToString().ShouldEqual(expectedRendering);
         }

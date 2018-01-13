@@ -8,7 +8,7 @@ namespace MuonLab.Web.Xhtml.Tests.Components.ComponentSpecifications
 {
 	public abstract class VisibleComponentSpecification<TComponent> : Specification where TComponent : IVisibleComponent
 	{
-        protected TComponent component;
+		protected TComponent component;
 		protected CultureInfo culture;
 		protected ITermResolver termResolver;
 
@@ -16,9 +16,16 @@ namespace MuonLab.Web.Xhtml.Tests.Components.ComponentSpecifications
 		{
 			culture = new CultureInfo("en-GB");
 			termResolver = this.Dependency<ITermResolver>();
-			this.component = (TComponent)Activator.CreateInstance(typeof(TComponent), termResolver, culture);
+			this.component = (TComponent) Activator.CreateInstance(typeof(TComponent), termResolver, culture);
+			component.WithRenderingOrder(ComponentPart.Component);
 		}
 
 		protected abstract string expectedRendering { get; }
+
+		[Then]
+		public void ItShouldRenderCorrectly()
+		{
+			component.ToString().ShouldEqual(expectedRendering);
+		}
 	}
 }

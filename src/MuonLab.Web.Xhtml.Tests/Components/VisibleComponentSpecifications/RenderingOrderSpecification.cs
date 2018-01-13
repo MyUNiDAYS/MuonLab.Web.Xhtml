@@ -13,7 +13,8 @@ namespace MuonLab.Web.Xhtml.Tests.Components.VisibleComponentSpecifications
 		protected override void Given()
 		{
 			var culture = new CultureInfo("en-GB");
-			component = new TestComponent<TestEntity, string>(this.Dependency<ITermResolver>(), culture).WithRenderingOrder(ComponentPart.Label, ComponentPart.WrapperStartTag, ComponentPart.Component, ComponentPart.ValidationMessage, ComponentPart.HelpText, ComponentPart.WrapperEndTag);
+			component = new TestComponent<TestEntity, string>(this.Dependency<ITermResolver>(), culture)
+				.WithRenderingOrder(ComponentPart.Label, ComponentPart.WrapperStartTag, ComponentPart.Component, ComponentPart.ValidationMessage, ComponentPart.HelpText, ComponentPart.WrapperEndTag);
 		}
 
 		protected override void When()
@@ -33,40 +34,19 @@ namespace MuonLab.Web.Xhtml.Tests.Components.VisibleComponentSpecifications
 			{
 			}
 
-			public override string ControlPrefix
-			{
-				get { return "ctrl"; }
-			}
+			public override string ControlPrefix => "ctrl";
 
-			protected override string RenderComponent()
-			{
-				return "component";
-			}
+			protected override string RenderComponent() => "component";
 
-			protected override string RenderLabel()
-			{
-				return "label";
-			}
+			protected override string RenderLabel() => "label";
 
-			protected override string RenderValidationMessage()
-			{
-				return "validationmessage";
-			}
+			protected override string RenderValidationMessage() => "validationmessage";
 
-			protected override string RenderHelpText()
-			{
-				return "helptext";
-			}
+			protected override string RenderHelpText() => "helptext";
 
-			protected override string RenderWrapperEndTag()
-			{
-				return "wrapperendtag";
-			}
+			protected override string RenderWrapperEndTag() => "wrapperendtag";
 
-			protected override string RenderWrapperStartTag()
-			{
-				return "wrapperstarttag";
-			}
+			protected override string RenderWrapperStartTag() => "wrapperstarttag";
 		}
 
 		class TestEntity

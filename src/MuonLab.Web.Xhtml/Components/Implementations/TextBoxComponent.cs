@@ -1,12 +1,12 @@
 using System.Globalization;
-using System.Linq;
 using MuonLab.Web.Xhtml.Configuration;
 
 namespace MuonLab.Web.Xhtml.Components.Implementations
 {
     public class TextBoxComponent<TViewModel, TProperty> : 
 		FormattableComponent<TViewModel, TProperty>, 
-		ITextBoxComponent<TProperty>
+		ITextBoxComponent<TProperty>,
+		ITextBoxComponentInternal
     {
 	    protected bool useLabelForPlaceholder;
 	    protected string placeholder;
@@ -16,12 +16,9 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 	    {
 	    }
 
-	    public override string ControlPrefix
-        {
-            get { return "txt"; }
-        }
+	    public override string ControlPrefix => "txt";
 
-        protected bool asDefaultEmpty;
+	    protected bool asDefaultEmpty;
 
         public virtual ITextBoxComponent ShowDefaultAsEmpty()
         {
@@ -64,10 +61,9 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
             return this;
         }
 
-	    public ITextBoxComponent WithMaxLength(int length)
+	    void ITextBoxComponentInternal.WithMaxLength(int length)
 	    {
 		    this.WithAttr("maxlength", length.ToString());
-		    return this;
 	    }
 
 		protected override string RenderComponent()

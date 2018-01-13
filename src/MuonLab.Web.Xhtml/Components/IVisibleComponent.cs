@@ -3,14 +3,8 @@ using MuonLab.Web.Xhtml.Properties;
 
 namespace MuonLab.Web.Xhtml.Components
 {
-	public interface IVisibleComponent<in TProperty> : IComponent<TProperty>, IVisibleComponent
-	{
-
-	}
-
 	public interface IVisibleComponent : IComponent
     {
-        IVisibleComponent WithRenderingOrder(params ComponentPart[] renderingOrder);
 
         string Label { get; }
 

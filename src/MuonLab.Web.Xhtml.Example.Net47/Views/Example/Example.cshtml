@@ -1,0 +1,21 @@
+﻿@model MuonLab.Web.Xhtml.Example.Net47.Models.ExampleViewModel
+<html>
+<head runat="server">
+	<title>Test</title>
+</head>
+<body>
+	<div>
+		@Html.BeginForm()
+
+		@Html.TextBoxFor(x => x.Name)
+		@Html.PasswordBoxFor(x => x.Password)
+		@Html.DropDownFor(x => x.Sex).WithNullOption("Please Choose")
+
+		@Html.TextBoxFor(x => x.Age)
+
+		<button type="submit"><span>Submit</span></button>
+
+		@Html.EndForm()
+	</div>
+</body>
+</html>

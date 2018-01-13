@@ -1,6 +1,6 @@
-namespace MuonLab.Web.Xhtml.Example.ViewModels
+namespace MuonLab.Web.Xhtml.Example.Net47.Models
 {
-	public class TestViewModel
+	public class ExampleViewModel
 	{
 		public string Name { get; set; }
 		public string Password { get; set; }

@@ -1,10 +1,8 @@
-using System.Web;
-
 namespace MuonLab.Web.Xhtml.Components
 {
     public interface IComponent
 #if NET46
-	    : IHtmlString
+	    : System.Web.IHtmlString
 #endif
 	{
         string Name { get; }

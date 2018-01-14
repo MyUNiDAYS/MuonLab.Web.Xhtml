@@ -14,7 +14,7 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
         protected TProperty value;
         protected string attemptedValue;
 
-        public string Name => this.GetAttr("name");
+        public string Name => (this as IComponentInternal).GetAttr("name");
 
 		protected Component()
         {

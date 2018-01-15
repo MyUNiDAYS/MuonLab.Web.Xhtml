@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using MuonLab.Web.Xhtml.Components.Implementations;
 using MuonLab.Web.Xhtml.Configuration;
 using MuonLab.Web.Xhtml.Properties;
 
-namespace MuonLab.Web.Xhtml.Components.Implementations
+namespace MuonLab.Web.Xhtml.Components
 {
     public abstract class VisibleComponent<TViewModel, TProperty> : 
 		Component<TViewModel, TProperty>, 

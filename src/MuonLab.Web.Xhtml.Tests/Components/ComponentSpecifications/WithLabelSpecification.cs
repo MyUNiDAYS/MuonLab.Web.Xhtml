@@ -1,4 +1,5 @@
 using MuonLab.Testing;
+using MuonLab.Web.Xhtml.Components;
 using NSubstitute;
 
 namespace MuonLab.Web.Xhtml.Tests.Components.ComponentSpecifications

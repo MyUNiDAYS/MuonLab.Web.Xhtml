@@ -1,13 +1,10 @@
-using MuonLab.Web.Xhtml.Components.Implementations;
+using MuonLab.Web.Xhtml.Components;
 
 namespace MuonLab.Web.Xhtml.Tests.Components.ComponentSpecifications
 {
 	public class TestComponent<TEntity, TProperty> : Component<TEntity, TProperty> where TEntity : class
 	{
-		public override string ControlPrefix
-		{
-			get { return "ctrl"; }
-		}
+		public override string ControlPrefix => "ctrl";
 
 		protected override string RenderComponent()
 		{

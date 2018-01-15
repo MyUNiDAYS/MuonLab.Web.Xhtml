@@ -1,5 +1,5 @@
 using System.Globalization;
-using MuonLab.Web.Xhtml.Components.Implementations;
+using MuonLab.Web.Xhtml.Components;
 using MuonLab.Web.Xhtml.Configuration;
 
 namespace MuonLab.Web.Xhtml.Tests.Components.ComponentSpecifications
@@ -10,10 +10,7 @@ namespace MuonLab.Web.Xhtml.Tests.Components.ComponentSpecifications
 		{
 		}
 
-		public override string ControlPrefix
-		{
-			get { return "ctrl"; }
-		}
+		public override string ControlPrefix => "ctrl";
 
 		protected override string RenderComponent()
 		{

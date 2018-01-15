@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace MuonLab.Web.Xhtml.Components.Implementations
+namespace MuonLab.Web.Xhtml.Components
 {
 	[DebuggerDisplay("Name: {Name}")]
     public abstract class Component<TViewModel, TProperty> : 
@@ -74,9 +74,14 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 
 		/// <inheritdoc />
         string IComponentInternal.GetAttr(string name)
-        {
-        	return this.htmlAttributes.ContainsKey(name) ? this.htmlAttributes[name].ToString() : null;
-        }
+		{
+			return this.GetAttr(name);
+		}
+
+	    protected internal string GetAttr(string name)
+	    {
+		    return this.htmlAttributes.ContainsKey(name) ? this.htmlAttributes[name].ToString() : null;
+		}
 
     	protected abstract string RenderComponent();
 

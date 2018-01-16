@@ -22,7 +22,7 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 			checkbox.HtmlAttributes.Add("type", "checkbox");
 			checkbox.HtmlAttributes.Add("value", this.innerValue);
 
-			if (this.value.Contains(this.innerValue))
+			if (this.Value.Contains(this.innerValue))
 				checkbox.HtmlAttributes.Add("checked", "checked");
 
 			return checkbox.ToString();

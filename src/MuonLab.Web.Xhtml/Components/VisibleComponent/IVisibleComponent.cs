@@ -14,13 +14,14 @@ namespace MuonLab.Web.Xhtml.Components
         /// <returns></returns>
         IVisibleComponent WithLabel(bool aria = true);
 
-		/// <summary>
-		/// Adds an HTML Label tag to the markup with the given text.
-		/// </summary>
-		/// <param name="label">The label text</param>
-		/// <param name="contentType">The content type of the label</param>
-		/// <returns></returns>
-		IVisibleComponent WithLabel(string label, ContentType contentType = ContentType.Term, bool aria = true);
+        /// <summary>
+        /// Adds an HTML Label tag to the markup with the given text.
+        /// </summary>
+        /// <param name="label">The label text</param>
+        /// <param name="contentType">The content type of the label</param>
+        /// <param name="aria"></param>
+        /// <returns></returns>
+        IVisibleComponent WithLabel(string label, ContentType contentType = ContentType.Term, bool aria = true);
 
         /// <summary>
         /// Prevents an HTML label from being rendered

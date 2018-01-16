@@ -14,7 +14,7 @@ namespace MuonLab.Web.Xhtml.Components
 		IVisibleComponent<TProperty>,
 	    IVisibleComponentInternal
 	{
-	    protected readonly ITermResolver termResolver;
+	    protected internal readonly ITermResolver termResolver;
 	    protected readonly CultureInfo culture;
 	    internal event EventHandler OnPrepareForRender;
 

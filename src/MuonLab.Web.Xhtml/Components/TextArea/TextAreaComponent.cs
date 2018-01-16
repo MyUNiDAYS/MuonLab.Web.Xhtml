@@ -43,7 +43,7 @@ namespace MuonLab.Web.Xhtml.Components
 			this.AddAriaDescribedBy();
 
             var builder = new TagBuilder("textarea", this.htmlAttributes);
-            builder.SetInnerText(this.FormatValue(this.value));
+            builder.SetInnerText(this.FormatValue(this.Value));
             return builder.ToString();
         }
     }

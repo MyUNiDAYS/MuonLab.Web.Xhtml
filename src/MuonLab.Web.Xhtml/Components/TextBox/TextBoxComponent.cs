@@ -1,5 +1,4 @@
 using System.Globalization;
-using MuonLab.Web.Xhtml.Components.Implementations;
 using MuonLab.Web.Xhtml.Configuration;
 
 // ReSharper disable once CheckNamespace
@@ -55,10 +54,10 @@ namespace MuonLab.Web.Xhtml.Components
         {
             string fieldValue;
 
-            if (this.asDefaultEmpty && Equals(this.value, default(TProperty)))
+            if (this.asDefaultEmpty && Equals(this.Value, default(TProperty)))
                 fieldValue = null;
             else
-                fieldValue = this.FormatValue(this.value);
+                fieldValue = this.FormatValue(this.Value);
 
             if (this.attemptedValue != null)
                 fieldValue = this.attemptedValue;

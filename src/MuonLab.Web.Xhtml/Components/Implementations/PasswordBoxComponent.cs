@@ -47,7 +47,7 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 
         protected override string RenderComponent()
         {
-            this.htmlAttributes.Add("value", this.value);
+            this.htmlAttributes.Add("value", this.Value);
 			this.htmlAttributes.Add("type", "password");
 
 			if (this.useLabelForPlaceholder)

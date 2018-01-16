@@ -41,7 +41,7 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 				checkbox.HtmlAttributes.Add("type", "radio");
 				checkbox.HtmlAttributes.Add("value", valueFunc(item));
 
-    			if (Equals(value, item))
+    			if (Equals(this.Value, item))
     				checkbox.HtmlAttributes.Add("checked", "checked");
 				
 				checkbox.HtmlAttributes.Add("aria-label", textFunc(item));

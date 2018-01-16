@@ -1,8 +1,7 @@
 using System.Globalization;
-using MuonLab.Web.Xhtml.Components;
 using MuonLab.Web.Xhtml.Configuration;
 
-namespace MuonLab.Web.Xhtml.Components.Implementations
+namespace MuonLab.Web.Xhtml.Components
 {
     public class EmailBoxComponent<TViewModel, TProperty> : 
 		TextBoxComponent<TViewModel, TProperty>, 
@@ -18,10 +17,10 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
         {
             string fieldValue;
 
-            if (this.asDefaultEmpty && Equals(this.value, default(TProperty)))
+            if (this.asDefaultEmpty && Equals(this.Value, default(TProperty)))
                 fieldValue = null;
             else
-                fieldValue = this.FormatValue(this.value);
+                fieldValue = this.FormatValue(this.Value);
 
             if (this.attemptedValue != null)
                 fieldValue = this.attemptedValue;

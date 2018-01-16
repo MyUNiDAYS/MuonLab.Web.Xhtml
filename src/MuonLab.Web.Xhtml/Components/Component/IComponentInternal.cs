@@ -9,4 +9,10 @@
 		/// <returns>The attribute value or null</returns>
 		string GetAttr(string name);
 	}
+
+	internal interface IComponentInternal<in TProperty>
+	{
+
+	    TProperty Value { set; }
+	}
 }

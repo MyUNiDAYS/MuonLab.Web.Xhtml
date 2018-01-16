@@ -8,7 +8,7 @@ namespace MuonLab.Web.Xhtml.Tests.Components.TextBoxSpecifications
     {
         protected override void When()
         {
-			component.ShowDefaultAsEmpty().WithValue(default(DateTime));
+            component.ShowDefaultAsEmpty().WithValue(default(DateTime));
         }
 
         protected override string expectedRendering => "<input type=\"text\" />";

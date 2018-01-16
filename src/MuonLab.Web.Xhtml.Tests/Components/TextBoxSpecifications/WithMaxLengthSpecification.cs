@@ -8,7 +8,9 @@ namespace MuonLab.Web.Xhtml.Tests.Components.TextBoxSpecifications
     {
         protected override void When()
         {
-			component.WithMaxLength(10);
+            component
+                .ShowDefaultAsEmpty()
+                .WithMaxLength(10);
         }
 
         protected override string expectedRendering => "<input type=\"text\" maxlength=\"10\" />";

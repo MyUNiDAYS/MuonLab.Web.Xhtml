@@ -18,7 +18,7 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 			checkbox.HtmlAttributes.Add("type", "checkbox");
 			checkbox.HtmlAttributes.Add("value", "TRUE");
 
-			if (this.value)
+			if (this.Value)
 				checkbox.HtmlAttributes.Add("checked", "checked");
 
 			if (this.htmlAttributes.ContainsKey("disabled"))

@@ -34,7 +34,7 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 
 			if (this.tickAll != null)
 			{
-				var allTicked = this.items.All(item => itemIsValue(value, item));
+				var allTicked = this.items.All(item => itemIsValue(this.Value, item));
 
 				stringBuilder.Append("<div class=\"tickAll\">");
 
@@ -74,7 +74,7 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 				checkbox.HtmlAttributes.Add("type", "checkbox");
 				checkbox.HtmlAttributes.Add("value", valueFunc(item));
 
-				if (itemIsValue(value, item))
+				if (itemIsValue(this.Value, item))
 					checkbox.HtmlAttributes.Add("checked", "checked");
 
 				if(this.ariaLabel)

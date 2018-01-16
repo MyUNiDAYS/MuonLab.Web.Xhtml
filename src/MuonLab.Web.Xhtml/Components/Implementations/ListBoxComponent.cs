@@ -58,7 +58,7 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
 
 				optionBuilder.HtmlAttributes.Add("value", this.itemValueFunc.Invoke(item));
 
-				if (!ReferenceEquals(this.value, null) && Equals(propertyValueFunc(this.value), itemValueFunc(item)))
+				if (!ReferenceEquals(this.Value, null) && Equals(propertyValueFunc(this.Value), itemValueFunc(item)))
 					optionBuilder.HtmlAttributes.Add("selected", "selected");
 
 				optionBuilder.SetInnerText(this.itemTextFunc.Invoke(item));

@@ -24,8 +24,8 @@ namespace MuonLab.Web.Xhtml.Components.Implementations
             var builder = new TagBuilder("input", this.htmlAttributes);
             builder.HtmlAttributes.Add("type", "hidden");
 
-            if(!ReferenceEquals(this.value, null))
-                builder.HtmlAttributes.Add("value", toStringFunc(this.value));
+            if(!ReferenceEquals(this.Value, null))
+                builder.HtmlAttributes.Add("value", toStringFunc(this.Value));
 
             return builder.ToString();
         }

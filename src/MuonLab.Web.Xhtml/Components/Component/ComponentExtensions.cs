@@ -2,6 +2,17 @@
 {
 	public static class ComponentExtensions
 	{
+	    /// <summary>
+	    /// Sets the value for this component
+	    /// </summary>
+	    /// <param name="value"></param>
+	    /// <returns></returns>
+        public static TComponent WithValue<TComponent, TProperty>(this TComponent component, TProperty value)
+            where TComponent : IComponent<TProperty>
+	    {
+	        (component as IComponentInternal<TProperty>).Value = value;
+	        return component;
+	    }
 
 		/// <summary>
 		/// Sets an attribute-value on the component if a condition is met

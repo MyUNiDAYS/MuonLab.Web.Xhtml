@@ -1,3 +1,6 @@
+using System;
+using MuonLab.Web.Xhtml.Configuration;
+
 namespace MuonLab.Web.Xhtml.Components
 {
     public interface IComponent
@@ -14,7 +17,7 @@ namespace MuonLab.Web.Xhtml.Components
         /// <param name="value"></param>
         /// <returns></returns>
         IComponent WithAttr(string name, object value);
-		
+        
         /// <summary>
         /// Removes an attribute if set
         /// </summary>
@@ -22,13 +25,6 @@ namespace MuonLab.Web.Xhtml.Components
         /// <returns></returns>
         IComponent WithoutAttr(string name);
 		
-        /// <summary>
-        /// Sets the value for the component. Although this is weakly typed, you should set it with the correct type
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        IComponent WithValue(object value);
-
         /// <summary>
         /// Sets the raw string attempted value. This should not be used outside of the ComponentFactory
         /// </summary>
@@ -39,11 +35,6 @@ namespace MuonLab.Web.Xhtml.Components
 
     public interface IComponent<in TProperty> : IComponent
     {
-        /// <summary>
-        /// Sets the value for this component
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        IComponent<TProperty> WithValue(TProperty value);
+
     }
 }
